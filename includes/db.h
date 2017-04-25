@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 00:30:12 by kmurray           #+#    #+#             */
-/*   Updated: 2017/04/24 19:15:34 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/04/24 23:54:42 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,13 @@ typedef enum	e_region
 {
 	FR, CA, AUS
 }				t_region;
+
+void	add(char *file);
+void	delete(char *file);
+void	update(char *file);
+void	get_tree(int fd, t_list **begin_list);
+t_list	*key_search(t_list *begin_list, int key);
+void	serialize(FILE *fp, t_list *begin_list);
+void	print_tree(t_list *begin_list);
 
 #endif

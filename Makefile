@@ -6,7 +6,7 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/24 00:13:00 by kmurray           #+#    #+#              #
-#    Updated: 2017/04/24 00:52:26 by kmurray          ###   ########.fr        #
+#    Updated: 2017/04/24 23:52:43 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ INC = $(addprefix -I,$(INC_PATH))
 INC_LFT = $(addprefix -I, $(addprefix $(LIBFT_PATH), $(INC_PATH)))
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
-SRC_NAME = main.c
+SRC_NAME = main.c add.c delete.c update.c get_tree.c key_search.c serialize.c\
+		   print_tree.c
 
 all: $(NAME)
 
