@@ -1,0 +1,6 @@
+1,2010,USA,White
+2,2013,California,Red
+6,1990,France,Rose
+4,2014,Australia,Red
+5,1987,Canada,Purple
+10,1992,Moldova,Red
