@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 12:26:25 by kmurray           #+#    #+#             */
-/*   Updated: 2017/04/24 03:48:06 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/05/01 02:36:49 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,9 @@ int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
-void				ft_toupperstr(char *str);
+char				*ft_toupperstr(char *str);
+char				*ft_tolowerstr(char *str);
+char				*ft_capitalize_each(char *str);
 int					ft_tolower(int c);
 int					ft_iswhitespace(char c);
 

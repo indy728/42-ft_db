@@ -6,7 +6,7 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/24 00:13:00 by kmurray           #+#    #+#              #
-#    Updated: 2017/04/24 23:52:43 by kmurray          ###   ########.fr        #
+#    Updated: 2017/05/04 01:10:29 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME= wine_db
 
 CC= gcc
 
-CFLAGSFLAGS+= -Wall -Wextra -Werror
+CFLAGS+= -Wall -Wextra -Werror
 
 SRC_PATH= src/
 INC_PATH= includes/
@@ -28,8 +28,10 @@ INC = $(addprefix -I,$(INC_PATH))
 INC_LFT = $(addprefix -I, $(addprefix $(LIBFT_PATH), $(INC_PATH)))
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
-SRC_NAME = main.c add.c delete.c update.c get_tree.c key_search.c serialize.c\
-		   print_tree.c
+SRC_NAME = main.c add.c insert_bn.c delete.c sort_display.c\
+	populate_db.c print_bt.c search_display.c serialize.c\
+	update.c search_key.c get_string.c init_node.c\
+	reset_file.c validate_input.c validate_db.c\
 
 all: $(NAME)
 
@@ -39,7 +41,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir -p $(OBJ_PATH)
-	$(CC) $(INC) $(INC_LFT) -o $@ -c $< 
+	$(CC) $(CFLAGS) $(INC) $(INC_LFT) -o $@ -c $<
 
 test: $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) -L$(LIBFT_PATH) -lft
@@ -51,5 +53,5 @@ clean:
 fclean: clean
 	make -C $(LIBFT_PATH) fclean
 	rm -f $(NAME)
-	
+
 re: fclean all

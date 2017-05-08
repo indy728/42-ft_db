@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   serialize.c                                        :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/24 23:50:47 by kmurray           #+#    #+#             */
-/*   Updated: 2017/05/01 00:29:26 by kmurray          ###   ########.fr       */
+/*   Created: 2017/04/27 20:14:25 by kmurray           #+#    #+#             */
+/*   Updated: 2017/04/27 20:26:06 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "db.h"
+#include "libft.h"
 
-void	serialize(t_wine *wine, FILE *fp)
+char	*ft_strcapitalize(char *str)
 {
-	if (!wine)
-		return ;
-	if (wine->left)
-		serialize(wine->left, fp);
-	fprintf(fp, "%d,%d,%s,%s,%s,%s\n", wine->key, wine->vintage,
-		ft_capitalize_each(wine->name),
-		ft_capitalize_each(wine->varietal),
-		ft_capitalize_each(wine->color),
-		ft_capitalize_each(wine->region));
-	if (wine->right)
-		serialize(wine->right, fp);
+	char	*hold;
+
+	hold = str;
+	*str = ft_toupper(*str);
+	while (*(++str))
+		*str = ft_tolower(*str);
+	return (hold);
 }
